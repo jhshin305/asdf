@@ -35,6 +35,7 @@ def update_full(binType):
     dir.set(True)
 
 def new_send_alert(binType):
+    print(f"Sending alert for {binType} bin...")
     database.collection("alert").add({
         'type': binType,
         'time': firestore.SERVER_TIMESTAMP
@@ -46,7 +47,7 @@ def new_send_alert(binType):
     doc_ref1 = database.collection("admin").document("fcmToken")
     # print(doc_ref1.get().to_dict())
     registration_token = doc_ref1.get().to_dict()['value']
-
+    print(f"Registration token: {registration_token}")
     alertMessage = {
         'plastic': '플라스틱이 가득 찼습니다',
         'glass': '유리이 가득 찼습니다',
