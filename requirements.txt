@@ -1,0 +1,4 @@
+adafruit-circuitpython-servokit
+firebase-admin
+playsound
+smbus2
